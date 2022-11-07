@@ -1,0 +1,13 @@
+apiVersion: instance.scaleway.upbound.io/v1alpha1
+kind: Server
+metadata:
+  name: hello-crossplane
+spec:
+  forProvider:
+    name: my-instance
+    type: DEV1-S
+    projectId: YOUR_PROJECT_ID
+    image: ubuntu_jammy
+    zone: fr-par-1
+  providerConfigRef:
+    name: default
