@@ -10,7 +10,7 @@ package apis
 import (
 	"k8s.io/apimachinery/pkg/runtime"
 
-	v1alpha1 "github.com/octo-technology/provider-scaleway/apis/null/v1alpha1"
+	v1alpha1 "github.com/octo-technology/provider-scaleway/apis/instance/v1alpha1"
 	v1alpha1apis "github.com/octo-technology/provider-scaleway/apis/v1alpha1"
 	v1beta1 "github.com/octo-technology/provider-scaleway/apis/v1beta1"
 )

@@ -8,9 +8,8 @@ import (
 	// Note(turkenh): we are importing this to embed provider schema document
 	_ "embed"
 
+	"github.com/octo-technology/provider-scaleway/config/instance_server"
 	ujconfig "github.com/upbound/upjet/pkg/config"
-
-	"github.com/octo-technology/provider-scaleway/config/null"
 )
 
 const (
@@ -34,7 +33,7 @@ func GetProvider() *ujconfig.Provider {
 
 	for _, configure := range []func(provider *ujconfig.Provider){
 		// add custom config functions
-		null.Configure,
+		instance_server.Configure,
 	} {
 		configure(pc)
 	}
