@@ -9,8 +9,8 @@ import (
 
 	"github.com/upbound/upjet/pkg/controller"
 
-	resource "github.com/upbound/upjet-provider-template/internal/controller/null/resource"
-	providerconfig "github.com/upbound/upjet-provider-template/internal/controller/providerconfig"
+	resource "github.com/octo-technology/provider-scaleway/internal/controller/null/resource"
+	providerconfig "github.com/octo-technology/provider-scaleway/internal/controller/providerconfig"
 )
 
 // Setup creates all controllers with the supplied logger and adds them to
