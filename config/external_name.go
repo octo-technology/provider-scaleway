@@ -11,6 +11,8 @@ import "github.com/upbound/upjet/pkg/config"
 var ExternalNameConfigs = map[string]config.ExternalName{
 	// Import requires using a randomly generated ID from provider: nl-2e21sda
 	"scaleway_instance_server": config.IdentifierFromProvider,
+	"scaleway_vpc_private_network": config.IdentifierFromProvider,
+	//"scaleway_instance_private_nic": config.IdentifierFromProvider,
 }
 
 // ExternalNameConfigurations applies all external name configs listed in the

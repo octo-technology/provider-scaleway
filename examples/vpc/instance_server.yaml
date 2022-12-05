@@ -1,0 +1,12 @@
+apiVersion: instance.scaleway.upbound.io/v1alpha1
+kind: PrivateNetwork
+metadata:
+  name: crossplane-vpc
+spec:
+  forProvider:
+    name: crossplane-vpc
+    tags:
+      - "crossplane-hello-world"
+    zone: fr-par-1
+  providerConfigRef:
+    name: default
