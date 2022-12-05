@@ -6,7 +6,7 @@ import (
 
 // Configure configures the null group
 func Configure(p *ujconfig.Provider) {
-	p.AddResourceConfigurator("scaleway_instance_server", func(r *ujconfig.Resource) {
+	p.AddResourceConfigurator("scaleway_vpc_private_network", func(r *ujconfig.Resource) {
 		// And other overrides.
 	})
 }

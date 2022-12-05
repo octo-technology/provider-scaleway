@@ -1,4 +1,4 @@
-apiVersion: instance.scaleway.upbound.io/v1alpha1
+apiVersion: vpc.scaleway.upbound.io/v1alpha1
 kind: PrivateNetwork
 metadata:
   name: crossplane-vpc

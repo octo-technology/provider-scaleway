@@ -57,7 +57,7 @@ func TerraformSetupBuilder(version, providerSource, providerVersion string) terr
 		if err != nil {
 			return ps, errors.Wrap(err, errExtractCredentials)
 		}
-		creds := map[string]string{}
+		creds := map[string]any{}
 		if err := json.Unmarshal(data, &creds); err != nil {
 			return ps, errors.Wrap(err, errUnmarshalCredentials)
 		}
@@ -66,9 +66,9 @@ func TerraformSetupBuilder(version, providerSource, providerVersion string) terr
 		ps.Configuration = map[string]any{
 			"access_key": creds["access_key"],
 			"secret_key": creds["secret_key"],
-			// "project_id": creds["project_id"],
-			// "region": creds["region"],
-			// "zone":   creds["zone"],
+			"project_id": creds["project_id"],
+			"region": creds["region"],
+			"zone":   creds["zone"],
 		}
 
 		return ps, nil

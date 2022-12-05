@@ -25,8 +25,17 @@ type PrivateNetworkObservation struct {
 type PrivateNetworkParameters struct {
 
 	// The Private Network ID
-	// +kubebuilder:validation:Required
-	PnID *string `json:"pnId" tf:"pn_id,omitempty"`
+	// +crossplane:generate:reference:type=github.com/octo-technology/provider-scaleway/apis/vpc/v1alpha1.PrivateNetwork
+	// +kubebuilder:validation:Optional
+	PnID *string `json:"pnId,omitempty" tf:"pn_id,omitempty"`
+
+	// Reference to a PrivateNetwork in vpc to populate pnId.
+	// +kubebuilder:validation:Optional
+	PnIDRef *v1.Reference `json:"pnIdRef,omitempty" tf:"-"`
+
+	// Selector for a PrivateNetwork in vpc to populate pnId.
+	// +kubebuilder:validation:Optional
+	PnIDSelector *v1.Selector `json:"pnIdSelector,omitempty" tf:"-"`
 
 	// The zone you want to attach the resource to
 	// +kubebuilder:validation:Optional

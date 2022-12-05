@@ -10,6 +10,7 @@ Copyright 2022 Upbound Inc.
 package v1alpha1
 
 import (
+	"github.com/crossplane/crossplane-runtime/apis/common/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 )
 
@@ -45,6 +46,16 @@ func (in *PrivateNetworkParameters) DeepCopyInto(out *PrivateNetworkParameters) 
 		in, out := &in.PnID, &out.PnID
 		*out = new(string)
 		**out = **in
+	}
+	if in.PnIDRef != nil {
+		in, out := &in.PnIDRef, &out.PnIDRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.PnIDSelector != nil {
+		in, out := &in.PnIDSelector, &out.PnIDSelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Zone != nil {
 		in, out := &in.Zone, &out.Zone
